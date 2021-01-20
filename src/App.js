@@ -7,7 +7,7 @@ function App() {
     endpoint = process.env.APIENDPOINT,
     [sdgData, updateDataFromSdgData] = useState([]),
     GetGoal = async () => {
-      return await Axios.get(process.env.APIENDPOINT,)
+      return await Axios.get(process.env.APIENDPOINT)
     },
     SdgData = () => {
       return sdgData.map((data, key) => <DisplayDescriptions title={data.title} key={key} displayDescriptions={data.description} />);
