@@ -9,7 +9,8 @@ function DisplayDescriptions(props) {
     document.title = `UNSD SDG ${title}`;
   }, [title]);
 
-  const showDescription = () => {
+  const showDescription = (e) => {
+   
     if (click) {
       updateClick(false)
       updateTitle(``)
