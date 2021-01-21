@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 
-function DisplayDescriptions(props) {
+function DisplayLayout(props) {
   const
     [title, updateTitle] = useState(''),
     [click, updateClick] = useState(false);
@@ -13,21 +13,25 @@ function DisplayDescriptions(props) {
    
     if (click) {
       updateClick(false)
-      updateTitle(``)
-
+      updateTitle('')
     }
     else {
       updateClick(true)
       updateTitle(`- ${props.title}`)
     }
   }
+
+  const displayDescriptions = () => {
+    return props.displayDescriptions.map((value, key) => <h3 className={'content-description'} key={key}>{value.description}</h3>)
+  }
+
   return (
     <article>
       <div className="content">
         <h2 onClick={showDescription} className="content-title">{props.title}</h2>
         {click &&
           <div className="content-description">
-            {props.displayDescriptions}
+            {displayDescriptions()}
           </div>
         }
       </div>
@@ -35,4 +39,4 @@ function DisplayDescriptions(props) {
   )
 }
 
-export default DisplayDescriptions;
+export default DisplayLayout;

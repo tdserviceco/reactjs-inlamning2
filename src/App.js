@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Axios from 'axios';
-import DisplayDescriptions from './components/DisplayDescription';
+import DisplayLayout from './components/DisplayLayout';
 
 function App() {
   const
@@ -10,11 +10,12 @@ function App() {
       return await Axios.get(endpoint)
     },
     SdgData = () => {
-      return sdgData.map((data, key) => <DisplayDescriptions title={data.title} key={key} displayDescriptions={data.description} />);
+      return sdgData.map((data, key) => <DisplayLayout title={data.title} key={key} displayDescriptions={data.targets} />);
     };
   useEffect(() => {
     document.title = "UNSD SDG";
     GetGoal().then(res => {
+      console.log(res)
       updateDataFromSdgData(res.data)
     })
   }, []);
