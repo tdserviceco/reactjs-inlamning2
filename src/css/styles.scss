@@ -1,12 +1,19 @@
 @import "./reset.scss";
+
 main {
   width: 50%;
   margin: 0 auto;
-
+  
   .head-title {
     text-align: center;
     padding-top: 2rem;
     margin-bottom: 2rem;
+    
+  }
+  .preview {
+    width: 6.25rem;
+    display: flex;
+    margin: 0 auto;
   }
   .articles {
     display: flex;
